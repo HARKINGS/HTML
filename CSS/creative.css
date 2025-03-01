@@ -1,0 +1,340 @@
+/* creative-layout.css */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #1a1a2e;
+    color: #fff;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #1a1a2e;
+}
+
+/* Top bar for layout switching */
+.layout-switcher {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    border-bottom-left-radius: 10px;
+}
+
+.layout-switcher button {
+    padding: 5px 10px;
+    background: #16213e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.layout-switcher button:hover,
+.layout-switcher button.active {
+    background: #e94560;
+}
+
+/* Header section with diagonal split */
+.header {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-content {
+    width: 60%;
+}
+
+.header h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    background: linear-gradient(90deg, #e94560, #ff9a8b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1;
+}
+
+.header h2 {
+    font-size: 1.5rem;
+    margin: 10px 0 0;
+    color: #e94560;
+    font-weight: 300;
+    border: none;
+}
+
+.avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: rotate(5deg);
+    transition: all 0.5s ease;
+    border: none;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    border: none;
+}
+
+.avatar:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.avatar:hover img {
+    transform: scale(1.1);
+}
+
+/* Content sections */
+.content {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    padding: 40px;
+}
+
+.left {
+    grid-column: span 4;
+    background: transparent;
+    width: 100%;
+    position: relative;
+}
+
+.right {
+    grid-column: span 8;
+    width: 100%;
+    position: relative;
+}
+
+/* Section styling */
+.profile-container, .profile-container-1 {
+    margin-bottom: 40px;
+    padding: 30px;
+    background: #16213e;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-container:hover, .profile-container-1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+    position: relative;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #e94560;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: none;
+}
+
+h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background: #e94560;
+}
+
+/* List items styling */
+.right .profile-item {
+    display: block;
+}
+
+#profile-list,
+#profile-list-1,
+#profile-list-2,
+#profile-list-3,
+#profile-list-4,
+#profile-list-5,
+#profile-list-6,
+#profile-list-7,
+#profile-list-8,
+#profile-list-9 {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(15, 52, 96, 0.5);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border-left: 3px solid #e94560;
+    transition: all 0.3s ease;
+}
+
+.profile-item:hover {
+    background: rgba(15, 52, 96, 0.8);
+    transform: translateX(5px);
+}
+
+#profile-list-2 .profile-item,
+#profile-list-4 .profile-item,
+#profile-list-5 .profile-item {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.profile-item .icon {
+    font-size: 20px;
+    margin-right: 15px;
+    color: #e94560;
+    width: 24px;
+    height: 24px;
+}
+
+.profile-item .editable {
+    flex-grow: 1;
+    padding: 5px 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+.profile-item .editable:hover {
+    background: rgba(233, 69, 96, 0.1);
+    border: 1px solid rgba(233, 69, 96, 0.3);
+}
+
+.profile-item .editable:empty::before {
+    content: attr(aria-placeholder);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Action buttons */
+.profile-item .actions {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: -40px;
+    background: #16213e;
+    border-radius: 25px;
+    padding: 5px 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.profile-item:hover .actions {
+    display: flex;
+}
+
+.actions button {
+    background: transparent;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    margin: 0 2px;
+}
+
+.actions button:hover {
+    background: #e94560;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .left, .right {
+        grid-column: span 12;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding-bottom: 60px;
+    }
+
+    .header-content {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .avatar {
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .content {
+        padding: 20px;
+    }
+
+    .profile-container, .profile-container-1 {
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header h2 {
+        font-size: 1.2rem;
+    }
+
+    .avatar {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+body.layout-creative {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fdf6e3;
+}
+
+body.layout-creative .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #1a1a2e;
+}
+
+/* Other styles specific to creative layout */

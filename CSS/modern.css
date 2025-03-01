@@ -1,0 +1,232 @@
+/* modern-layout.css */
+body {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f2f5;
+    color: #333;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 900px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 20px;
+  }
+  
+  /* Header section with name and photo */
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+  }
+  
+  .avatar {
+    border: none;
+    margin-right: 30px;
+  }
+  
+  .avatar img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .avatar img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Main content area */
+  .content {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .left {
+    width: 91%;
+    background-color: #f8f9fa;
+    padding: 40px;
+    border-right: 1px solid #eee;
+  }
+  
+  .right {
+    width: 91%;
+    padding: 40px;
+  }
+  
+  /* Section styling */
+  .profile-container, .profile-container-1 {
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+  }
+  
+  .profile-container {
+    background-color: transparent;
+    color: #333;
+  }
+  
+  h3 {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #2575fc;
+    border-bottom: 2px solid #2575fc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 32px;
+    margin: 0 0 5px 0;
+    color: #333;
+  }
+  
+  h2 {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0 0 20px 0;
+    color: #666;
+    border: none;
+  }
+  
+  /* List items styling */
+  #profile-list,
+  #profile-list-1,
+  #profile-list-2,
+  #profile-list-3,
+  #profile-list-4,
+  #profile-list-5,
+  #profile-list-6,
+  #profile-list-7,
+  #profile-list-8,
+  #profile-list-9 {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .profile-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .profile-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: white;
+  }
+  
+  #profile-list-2 .profile-item,
+  #profile-list-5 .profile-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .profile-item .icon {
+    font-size: 18px;
+    margin-right: 12px;
+    width: 24px;
+    height: 24px;
+    color: #2575fc;
+  }
+  
+  .profile-item .editable {
+    flex-grow: 1;
+    padding: 5px;
+    margin: 2px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .profile-item .editable:hover {
+    background-color: rgba(37, 117, 252, 0.1);
+    border: 1px solid rgba(37, 117, 252, 0.3);
+  }
+  
+  .profile-item .editable:empty::before {
+    content: attr(aria-placeholder);
+    color: #aaa;
+  }
+  
+  /* Action buttons */
+  .profile-item .actions {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: -35px;
+    background: white;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  .profile-item:hover .actions {
+    display: flex;
+  }
+  
+  .actions button {
+    background: white;
+    color: #666;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin: 0 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .actions button:hover {
+    background-color: #2575fc;
+    color: white;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+    
+    .content {
+      flex-direction: column;
+    }
+    
+    .left, .right {
+      width: 100%;
+      padding: 20px;
+    }
+    
+    .header {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .avatar {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }

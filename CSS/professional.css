@@ -1,0 +1,316 @@
+/* professional-layout.css */
+body {
+font-family: 'Georgia', serif;
+margin: 0;
+background-color: #f8f9fa;
+color: #343a40;
+line-height: 1.6;
+}
+
+.container {
+display: flex;
+flex-direction: row;
+width: 100%;
+max-width: 1100px;
+margin: 0 auto;
+background: #fff;
+box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Top bar for layout switching */
+.layout-switcher {
+position: fixed;
+top: 0;
+right: 0;
+display: flex;
+gap: 10px;
+padding: 10px;
+background: #fff;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+z-index: 1000;
+border-bottom-left-radius: 5px;
+}
+
+.layout-switcher button {
+    padding: 5px 15px;
+    background: #f8f9fa;
+    color: #343a40;
+    border: 1px solid #dee2e6;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.layout-switcher button:hover,
+.layout-switcher button.active {
+    background: #343a40;
+    color: #fff;
+    border-color: #343a40;
+}
+
+/* Side column styling */
+.left {
+    width: 30%;
+    background-color: #343a40;
+    color: #f8f9fa;
+    padding: 40px;
+    position: relative;
+}
+
+.avatar {
+    text-align: center;
+    margin-bottom: 40px;
+    border: none;
+}
+
+.avatar img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 0;
+    border: 6px solid #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.avatar img:hover {
+    border-color: #ced4da;
+}
+
+/* Main column styling */
+.right {
+    width: 70%;
+    padding: 40px;
+}
+
+/* Name section */
+.right .profile-container-1 {
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+}
+
+.right h1 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    margin: 0 0 10px 0;
+    color: #343a40;
+    letter-spacing: 1px;
+}
+
+.right h2 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin: 0;
+    color: #6c757d;
+    border: none;
+}
+
+/* Section styling */
+.profile-container, .profile-container-1 {
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #f8f9fa;
+    border-bottom: 1px solid rgba(248, 249, 250, 0.2);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.right h3 {
+    color: #343a40;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* List items styling */
+#profile-list,
+#profile-list-1,
+#profile-list-2,
+#profile-list-3,
+#profile-list-4,
+#profile-list-5,
+#profile-list-6,
+#profile-list-7,
+#profile-list-8,
+#profile-list-9 {
+list-style: none;
+padding: 0;
+}
+
+.profile-item {
+position: relative;
+display: flex;
+align-items: center;
+padding: 12px 0;
+margin-bottom: 8px;
+border-bottom: 1px dotted rgba(248, 249, 250, 0.2);
+transition: background-color 0.2s ease;
+}
+
+.right .profile-item {
+border-bottom: 1px dotted #dee2e6;
+}
+
+.profile-item:hover {
+background-color: rgba(248, 249, 250, 0.05);
+}
+
+.right .profile-item:hover {
+background-color: rgba(0, 0, 0, 0.02);
+}
+
+#profile-list-2 .profile-item,
+#profile-list-4 .profile-item,
+#profile-list-5 .profile-item {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.profile-item .icon {
+    font-size: 16px;
+    margin-right: 12px;
+    color: #adb5bd;
+    width: 20px;
+    height: 20px;
+}
+
+.left
+.profile-item 
+.editable
+ {
+    max-width: 250px;
+}
+
+.profile-item .editable {
+    flex-grow: 1;
+    padding: 4px 8px;
+    margin: 2px 0;
+    border-radius: 0;
+    transition: background-color 0.2s ease;
+}
+
+.right .profile-item {
+    display: block;
+    /* display grid cx dc */
+}
+
+.profile-item .editable:hover {
+    background-color: rgba(248, 249, 250, 0.1);
+    border: 1px solid rgba(248, 249, 250, 0.2);
+}
+
+.right .profile-item .editable:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid #dee2e6;
+}
+
+.profile-item .editable:empty::before {
+    content: attr(aria-placeholder);
+    color: rgba(248, 249, 250, 0.5);
+    font-style: italic;
+}
+
+.right .profile-item .editable:empty::before {
+color: #adb5bd;
+}
+
+/* First editable in certification and awards sections (date) */
+#profile-list-2 .editable:first-child,
+#profile-list-4 .editable:first-child {
+    font-style: italic;
+    color: #adb5bd;
+    margin-bottom: 4px;
+}
+
+.right #profile-list-2 .editable:first-child,
+.right #profile-list-4 .editable:first-child {
+    color: #6c757d;
+}
+
+/* Action buttons */
+.profile-item .actions {
+    display: none;
+    position: absolute;
+    right: 5px;
+    top: -30px;
+    background: #495057;
+    border-radius: 3px;
+    padding: 3px;
+    z-index: 10;
+}
+
+.right .profile-item .actions {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+
+.profile-item:hover .actions {
+    display: flex;
+}
+
+.actions button {
+    background: transparent;
+    color: #f8f9fa;
+    border: none;
+    width: 28px;
+    height: 28px;
+    margin: 0 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    font-size: 12px;
+}
+
+.right .actions button {
+    color: #495057;
+}
+
+.actions button:hover {
+    background: rgba(248, 249, 250, 0.1);
+}
+
+.right .actions button:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* Print styling for professional output */
+@media print {
+.layout-switcher {
+    display: none;
+}
+
+body {
+    background-color: white;
+}
+
+.container {
+    box-shadow: none;
+}
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+.container {
+    flex-direction: column;
+}
+
+.left, .right {
+    width: 100%;
+}
+}
+
+@media (max-width: 576px) {
+.left, .right {
+    padding: 25px;
+}
+
+.right h1 {
+    font-size: 2rem;
+}
+}

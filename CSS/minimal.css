@@ -1,0 +1,244 @@
+/* minimal-layout.css */
+body {
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 100%;
+  max-width: 1000px;
+  background: white;
+  border: 1px solid #eaeaea;
+  overflow: hidden;
+  margin: 20px;
+}
+
+/* Left column styling */
+.left {
+  padding: 40px;
+  background-color: #f7f7f7;
+  position: relative;
+}
+
+.avatar {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.avatar img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 2px;
+  border: none;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.avatar img:hover {
+  filter: grayscale(0%);
+}
+
+/* Right column styling */
+.right {
+  padding: 40px;
+  background-color: white;
+}
+
+/* Section styling */
+.profile-container, .profile-container-1 {
+  margin-bottom: 35px;
+}
+
+.profile-container {
+  background-color: transparent;
+  color: #333;
+}
+
+h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #888;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 28px;
+  margin: 0 0 5px 0;
+  color: #111;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 0 30px 0;
+  color: #555;
+  border: none;
+  letter-spacing: -0.3px;
+}
+
+/* List styling */
+#profile-list,
+#profile-list-1,
+#profile-list-2,
+#profile-list-3,
+#profile-list-4,
+#profile-list-5,
+#profile-list-6,
+#profile-list-7,
+#profile-list-8,
+#profile-list-9 {
+  list-style: none;
+  padding: 0;
+}
+
+.profile-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  padding: 10px 0;
+  margin-bottom: 5px;
+  border-bottom: 1px dotted #eaeaea;
+  transition: background-color 0.2s ease;
+}
+
+.profile-item:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+#profile-list-2 .profile-item,
+#profile-list-5 .profile-item {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile-item .icon {
+  font-size: 14px;
+  margin-right: 10px;
+  color: #888;
+  width: 16px;
+  height: 16px;
+}
+
+.profile-item .editable {
+  flex-grow: 1;
+  padding: 3px 5px;
+  margin: 2px 0;
+  font-size: 14px;
+  border-radius: 0;
+  transition: background-color 0.2s ease;
+}
+
+.profile-item .editable:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid #ddd;
+}
+
+.profile-item .editable:empty::before {
+  content: attr(aria-placeholder);
+  color: #bbb;
+  font-style: italic;
+}
+
+/* Action buttons */
+.profile-item .actions {
+  display: none;
+  position: absolute;
+  right: 5px;
+  top: -30px;
+  background: white;
+  border: 1px solid #eaeaea;
+  border-radius: 3px;
+  padding: 3px;
+  z-index: 10;
+}
+
+.profile-item:hover .actions {
+  display: flex;
+}
+
+.actions button {
+  background: transparent;
+  color: #888;
+  border: none;
+  width: 24px;
+  height: 24px;
+  margin: 0 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: color 0.2s ease;
+  font-size: 12px;
+}
+
+.actions button:hover {
+  color: #000;
+}
+
+/* Custom styling for specific sections */
+.right .profile-container-1 h3 {
+  font-size: 13px;
+  color: #111;
+}
+
+#profile-list-6 .profile-item,
+#profile-list-7 .profile-item,
+#profile-list-8 .profile-item {
+  padding-left: 0;
+}
+
+#profile-list-2 .editable,
+#profile-list-4 .editable {
+  margin-bottom: 5px;
+}
+
+/* First editable in certification items (date) */
+#profile-list-2 .editable:first-child,
+#profile-list-4 .editable:first-child {
+  font-weight: 600;
+  color: #555;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  
+  .left, .right {
+    padding: 30px;
+  }
+}
+
+body.layout-minimal {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
+}
+
+body.layout-minimal .container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 100%;
+  max-width: 1000px;
+  background: white;
+  border: 1px solid #eaeaea;
+  overflow: hidden;
+  margin: 20px;
+}
+
+/* Other styles specific to minimal layout */

@@ -1,0 +1,291 @@
+/* 
+- Viewport Height(vh): Đơn vị dựa trên chiều cao của khung nhìn trình duyệt. 1vh = 1% chiều cao của khung nhìn trình duyệt.
+- Viewport Width(vw): Đơn vị dựa trên chiều rộng của khung nhìn trình duyệt. 1vw = 1% chiều rộng của khung nhìn trình duyệt.
+- Viewport Minimum(vmin): Đơn vị dựa trên giá trị nhỏ nhất giữa chiều rộng và chiều cao của khung nhìn trình duyệt.
+- Viewport Maximum(vmax): Đơn vị dựa trên giá trị lớn nhất giữa chiều rộng và chiều cao của khung nhìn trình duyệt.
+- Box-shadow: Tạo bóng cho phần tử.
+- Flexbox: Một cách sắp xếp các phần tử trên trang web một cách linh hoạt và dễ dàng.
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100vw;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Cả hai cột sẽ có cùng chiều cao */
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+
+
+.left {
+    position: relative;
+    width: 265px;
+    background-color: #626262;
+    color: white;
+}
+
+.right {
+    position: relative;
+    width: 535px;
+    background-color: #ffffff;
+    color: black;
+}
+
+.left, 
+.right {
+    padding: 20px;
+    /* border-radius: 10px; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+    /* CSS cho avatar */
+
+.avatar {
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.avatar img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px; /* Bo tròn ảnh */
+    cursor: pointer; /* Khi hover vào sẽ giống button */
+    border: 3px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+.avatar img:hover {
+    border-color: #dddddd47;
+    /* transform: scale(1.1); */
+}
+
+
+
+
+
+
+
+    /* CSS cho Profile */
+.profile-container {
+    background-color: #626262;
+    color: white;
+    /* border-radius: 10px; */
+    font-family: Arial, sans-serif;
+}
+
+.profile-container-1 {
+    /* background-color: #626262; */
+    color: black;
+    /* border-radius: 10px; */
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    text-align: left;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.957);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+#profile-list,
+#profile-list-1, 
+#profile-list-2, 
+#profile-list-3, 
+#profile-list-4, 
+#profile-list-5, 
+#profile-list-6, 
+#profile-list-7, 
+#profile-list-8, 
+#profile-list-9, 
+#profile-list-10, 
+#profile-list-11 {
+    list-style: none;
+    padding: 0;
+}
+
+.right
+.profile-item {
+    display: block;
+}
+
+.profile-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: grab;
+    transition: background 0.3s ease;
+    flex-wrap: nowrap;
+}
+
+#profile-list-2 .profile-item {
+    flex-direction: column; 
+    align-items: flex-start;
+}
+
+#profile-list-5 .profile-item {
+    flex-direction: column; 
+    align-items: flex-start;
+}
+
+.profile-item .icon {
+    font-size: 16px;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.profile-item .editable {
+    flex-grow: 1;
+    cursor: text;
+    padding: 2px;
+    width: 80%;
+
+    min-width: 0; /* Tránh icon bị đẩy xuống hàng */
+    word-break: break-word; /* Xuống dòng khi cần */
+    white-space: normal; 
+    overflow-wrap: anywhere;
+}
+
+.profile-item .actions {
+    display: none; /* Ẩn đi các nút */
+    position: absolute;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.profile-item:hover {
+    background: #e7dede47; 
+}
+
+.profile-item:hover .actions {
+    display: block; 
+}
+
+.start-end {
+    display: flex;
+}
+
+.editable {
+    display: block;
+    min-width: max-content;
+    padding: 5px;
+    margin: 5px;
+    /* border-radius: 5px; */
+    overflow: hidden;
+    white-space: nowrap;
+    outline: none;
+    /* font-size: -webkit-xxx-large; */
+    /* width: -webkit-fill-available; */
+}
+
+.editable:hover {
+    /* border: 1px solid #fff; */
+    border: 1px solid #727272;
+}
+
+.editable:empty::before {
+    content: attr(aria-placeholder);
+    color: #9a9a9a;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.actions {
+    display: flex;
+    gap: 5px;
+    top: -33px;
+}
+
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    height: 30px;
+    width: 30px;
+}
+
+button:hover {
+    color: #ffcc00;
+}
+
+.actions button {
+    background: white;
+    border: none;
+    cursor: pointer;
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+
+.actions button:hover {
+    background: #ccc;
+}
+
+
+
+
+    /* CSS cho Layout Switcher */
+.layout-switcher {
+    display: grid;
+    position: fixed;
+    top: 20px;
+    right: 50px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.layout-btn {
+    width: auto;
+    padding: 8px 12px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.layout-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.layout-btn.active {
+    background-color: #4a6cf7;
+    color: white;
+}
