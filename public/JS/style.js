@@ -9,6 +9,7 @@ document.getElementById("avatar").addEventListener("change", function (event) {
     }
 });
 
+// Thực hiện thao tác các chức năng
 document.addEventListener("DOMContentLoaded", function () {
     // Cấu hình danh sách và dòng lệnh thêm tương ứng
     const profileCode = {
@@ -202,4 +203,3 @@ document.addEventListener("DOMContentLoaded", function () {
     // Khởi tạo danh sách tự động từ profileConfig
     Object.keys(profileCode).forEach(setupProfileList);
 });
-
